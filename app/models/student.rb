@@ -7,4 +7,7 @@ class Student < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
+
+  has_many :student_courses
+  has_many :courses, through: :student_courses
 end
